@@ -20,6 +20,7 @@ TIC TAC TOE
 
 Press Enter to proceed");
 			Console.ReadLine();
+			DataSystem.LoadData();
 			do
 			{
 				area.Reset();
@@ -75,12 +76,15 @@ Try something else.");
 				{
 					case Func.Turnout.UserWon:
 						Console.WriteLine("USER WON");
+						DataSystem.data[0]++;
 						break;
 					case Func.Turnout.ComputerWon:
 						Console.WriteLine("COMPUTER WON");
+						DataSystem.data[1]++;
 						break;
 					case Func.Turnout.Pending:
 						Console.WriteLine("It's a draw");
+						DataSystem.data[2]++;
 						break;
 					case Func.Turnout.Error:
 						Console.WriteLine("ERROR: Found both user and computer winning\nPress Enter to turn off app");
@@ -91,6 +95,7 @@ Try something else.");
 				Console.WriteLine("Press y if you want to play again");
 				input = Console.ReadLine();
 			} while (input.Trim().ToLower() == "y");
+			DataSystem.SaveData();
 			return 0;
 		}
 	}
