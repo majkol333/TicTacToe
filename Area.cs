@@ -25,7 +25,7 @@ namespace TicTacToe
             {
                 for (int y = 0; y < baseField[x].Length; y++)
                 {
-                    Console.Write(baseField[x][y]);
+                    Console.Write(baseField[x][y] + " ");
                 }
                 Console.WriteLine();
             }
